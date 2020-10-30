@@ -1,0 +1,76 @@
+﻿@model IEnumerable<btlMVC01.Models.NHANVIEN>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Thêm nhân viên", "Create")
+</p>
+<table class="table table-bordered table-striped" id="dataSanpham">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.tennv)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.tendangnhap)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.matkhau)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.LOAINHANVIEN.tenloainv)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.tennv)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.tendangnhap)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.matkhau)
+                </td>
+                <td>
+                    @{
+                        String tenloainv = "";
+                        if (item.LOAINHANVIEN.tenloainv.Equals("nhân viên"))
+                        {
+                            tenloainv = item.LOAINHANVIEN.tenloainv;
+                        }
+                    }
+                    <div title="@item.LOAINHANVIEN.tenloainv">
+                        @tenloainv
+                    </div>
+
+                </td>
+                <td>
+                    @Html.ActionLink("Edit", "Edit", new { id = item.manv }) |
+                    @Html.ActionLink("Details", "Details", new { id = item.manv }) |
+                    @Html.ActionLink("Delete", "Delete", new { id = item.manv })
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+@section scripts
+{
+    <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
+    <script src="https://cdn.datatables.net/1.10.22/js/jquery.dataTables.min.js"></script>
+    <script src="https://cdn.datatables.net/1.10.22/js/dataTables.bootstrap4.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            $('#dataSanpham').DataTable();
+        });
+    </script>
+}
+

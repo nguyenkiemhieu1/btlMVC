@@ -1,0 +1,58 @@
+﻿@model IEnumerable<btlMVC01.Models.LOAISANPHAM>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+<table class="table table-bordered table-striped" id="example">
+
+    <thead>
+        <p>
+            @Html.ActionLink("Thêm Loại sản phẩm", "Create")
+        </p>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.tenloaisp)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.mota)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.tenloaisp)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.mota)
+                </td>
+                <td>
+                    @Html.ActionLink("Sửa", "Edit", new { id = item.maloaisp }) |
+                    @Html.ActionLink("Chi tiết", "Details", new { id = item.maloaisp }) |
+                    @Html.ActionLink("Xóa", "Delete", new { id = item.maloaisp })|
+
+                </td>
+            </tr>
+
+        }
+        >
+    </tbody>
+
+</table>
+@section scripts
+{
+    <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
+    <script src="https://cdn.datatables.net/1.10.22/js/jquery.dataTables.min.js"></script>
+    <script src="https://cdn.datatables.net/1.10.22/js/dataTables.bootstrap4.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            $('#example').DataTable();
+        });
+    </script>
+}

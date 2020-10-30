@@ -1,0 +1,94 @@
+﻿@model IEnumerable<btlMVC01.Models.SANPHAM>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+
+<table class="table table-bordered table-striped" id="dataSanpham">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.tensp)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Mota)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.hinhanh)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.gia)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.soluong)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.LOAISANPHAM.tenloaisp)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.tensp)
+                </td>
+                <td>
+                    @{
+                        string[] a = item.Mota.ToString().Split(new String[] { " " }, StringSplitOptions.None);
+                        string tam = "";
+                        if (a.Length < 10)
+                        {
+                            tam = item.Mota;
+                        }
+                        else
+                        {
+                            for (int i = 0; i < 10; i++)
+                            {
+                                tam += a[i] + " ";
+                            }
+                            tam += "...";
+                        }
+
+                    }
+                    <div title="@item.Mota">
+                        @tam
+                    </div>
+                </td>
+                <td>
+                    <img src="~/Assets/images/@item.hinhanh" height="150" width="100" />
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.gia)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.soluong)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.LOAISANPHAM.tenloaisp)
+                </td>
+                <td>
+                    @Html.ActionLink("Xóa sản phẩm", "Delete", new { id = item.masp })
+
+                </td>
+            </tr>
+        }
+    </tbody>
+
+</table>
+
+@section scripts
+{
+    <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
+    <script src="https://cdn.datatables.net/1.10.22/js/jquery.dataTables.min.js"></script>
+    <script src="https://cdn.datatables.net/1.10.22/js/dataTables.bootstrap4.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            $('#dataSanpham').DataTable();
+        });
+    </script>
+}

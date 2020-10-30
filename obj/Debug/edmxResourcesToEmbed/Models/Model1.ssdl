@@ -1,0 +1,78 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="btlModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="LOAINHANVIEN">
+    <Key>
+      <PropertyRef Name="maloainv" />
+    </Key>
+    <Property Name="maloainv" Type="nvarchar" MaxLength="10" Nullable="false" />
+    <Property Name="tenloainv" Type="nvarchar" MaxLength="20" />
+  </EntityType>
+  <EntityType Name="LOAISANPHAM">
+    <Key>
+      <PropertyRef Name="maloaisp" />
+    </Key>
+    <Property Name="maloaisp" Type="nvarchar" MaxLength="10" Nullable="false" />
+    <Property Name="tenloaisp" Type="nvarchar" MaxLength="100" />
+    <Property Name="mota" Type="nvarchar" MaxLength="200" />
+  </EntityType>
+  <EntityType Name="NHANVIEN">
+    <Key>
+      <PropertyRef Name="manv" />
+    </Key>
+    <Property Name="manv" Type="nvarchar" MaxLength="10" Nullable="false" />
+    <Property Name="tennv" Type="nvarchar" MaxLength="50" />
+    <Property Name="tendangnhap" Type="nvarchar" MaxLength="50" />
+    <Property Name="matkhau" Type="nvarchar" MaxLength="50" />
+    <Property Name="maloainv" Type="nvarchar" MaxLength="10" />
+  </EntityType>
+  <EntityType Name="SANPHAM">
+    <Key>
+      <PropertyRef Name="masp" />
+    </Key>
+    <Property Name="masp" Type="nvarchar" MaxLength="10" Nullable="false" />
+    <Property Name="tensp" Type="nvarchar" MaxLength="100" />
+    <Property Name="Mota" Type="nvarchar" MaxLength="200" />
+    <Property Name="hinhanh" Type="nvarchar" MaxLength="100" />
+    <Property Name="gia" Type="int" />
+    <Property Name="soluong" Type="int" />
+    <Property Name="maloaisp" Type="nvarchar" MaxLength="10" />
+  </EntityType>
+  <Association Name="fk_nhanvien">
+    <End Role="LOAINHANVIEN" Type="Self.LOAINHANVIEN" Multiplicity="0..1" />
+    <End Role="NHANVIEN" Type="Self.NHANVIEN" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="LOAINHANVIEN">
+        <PropertyRef Name="maloainv" />
+      </Principal>
+      <Dependent Role="NHANVIEN">
+        <PropertyRef Name="maloainv" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fksanpham">
+    <End Role="LOAISANPHAM" Type="Self.LOAISANPHAM" Multiplicity="0..1" />
+    <End Role="SANPHAM" Type="Self.SANPHAM" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="LOAISANPHAM">
+        <PropertyRef Name="maloaisp" />
+      </Principal>
+      <Dependent Role="SANPHAM">
+        <PropertyRef Name="maloaisp" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="btlModelStoreContainer">
+    <EntitySet Name="LOAINHANVIEN" EntityType="Self.LOAINHANVIEN" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="LOAISANPHAM" EntityType="Self.LOAISANPHAM" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="NHANVIEN" EntityType="Self.NHANVIEN" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="SANPHAM" EntityType="Self.SANPHAM" Schema="dbo" store:Type="Tables" />
+    <AssociationSet Name="fk_nhanvien" Association="Self.fk_nhanvien">
+      <End Role="LOAINHANVIEN" EntitySet="LOAINHANVIEN" />
+      <End Role="NHANVIEN" EntitySet="NHANVIEN" />
+    </AssociationSet>
+    <AssociationSet Name="fksanpham" Association="Self.fksanpham">
+      <End Role="LOAISANPHAM" EntitySet="LOAISANPHAM" />
+      <End Role="SANPHAM" EntitySet="SANPHAM" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>
