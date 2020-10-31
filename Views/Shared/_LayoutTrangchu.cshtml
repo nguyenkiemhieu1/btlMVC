@@ -57,7 +57,7 @@
                                 <div class="aa-currency">
                                     <div class="dropdown">
                                         <a class="btn dropdown-toggle" href="#" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
-                                            <i class="fa fa-money"></i>PKR
+                                            <i class="fa fa-money"></i>VN
                                             @*<span class="caret"></span>*@
                                         </a>
                                     </div>
@@ -73,24 +73,19 @@
                             <div class="aa-header-top-right">
                                 <ul class="aa-head-top-nav-right">
 
-                                    <li><a href="@(Session["username"] != null ? Url.Action("Index", "Account") : Url.Action("Login", "Account"))">My Account</a></li>
-                                    <li class="hidden-xs">
-                                        <a href="@(Session["username"] != null ? Url.Action("Index", "WishList") : Url.Action("Login", "Account"))">
-                                            Wishlist @if (@ViewBag.WlItemsNo > 0)
-                                            {<text>(@ViewBag.WlItemsNo)</text>}
-                                        </a>
-                                    </li>
+                                    <li><a href="@Url.Action("Index", "Account")">Tài khoản của tôi</a></li>
+                                   
                                     <li class="hidden-xs">
                                         <a href="@(Session["username"] != null ? Url.Action("Index", "MyCart") : Url.Action("Login", "Account"))">
-                                            My Cart @if (@ViewBag.NoOfItem > 0)
+                                            Giỏ hàng @if (@ViewBag.NoOfItem > 0)
                                             {<text>(@ViewBag.NoOfItem)</text>}
                                         </a>
                                     </li>
-                                    <li class="hidden-xs"><a href="@(Session["username"] != null ? Url.Action("Index", "CheckOut") : Url.Action("Login", "Account"))">Checkout</a></li>
+                                    <li class="hidden-xs"><a href="@(Session["username"] != null ? Url.Action("Index", "CheckOut") : Url.Action("Login", "Account"))">Thanh toán</a></li>
                                     @if (Session["username"] == null)
                                     {
 
-                                        <li>@Html.ActionLink("Login", "Login", "Account")</li>
+                                        <li>@Html.ActionLink("Đăng nhập", "Login", "Account")</li>
                                     }
                                     else
                                     {
@@ -162,7 +157,7 @@
     <section id="menu">
         <div class="container">
             <div class="menu-area">
-                 Navbar 
+      
                 <div class="navbar navbar-default" role="navigation">
                     <div class="navbar-header">
                         <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
@@ -173,7 +168,7 @@
                         </button>
                     </div>
                     <div class="navbar-collapse collapse">
-                         Left nav 
+                        
                         <ul class="nav navbar-nav">
                             <li><a href="@Url.Action("Index","Home")">Home</a></li>
                             @{
@@ -206,7 +201,7 @@
                             }
 
                         </ul>
-                    </div>/.nav-collapse 
+                    </div> 
                 </div>
             </div>
         </div>

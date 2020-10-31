@@ -647,6 +647,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\HomesController.cs" />
     <Compile Include="Controllers\LOAISANPHAMsController.cs" />
     <Compile Include="Controllers\NHANVIENsController.cs" />
@@ -703,6 +704,8 @@
     <Content Include="Views\SANPHAMsAdmin\Index.cshtml" />
     <Content Include="Scripts\jquery-3.4.1.slim.min.map" />
     <Content Include="Scripts\jquery-3.4.1.min.map" />
+    <Content Include="Views\Account\Index.cshtml" />
+    <Content Include="Views\Account\Login.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
