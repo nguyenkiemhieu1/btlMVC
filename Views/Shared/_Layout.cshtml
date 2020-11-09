@@ -68,7 +68,7 @@
                       
 
                                 
-                                <li><a href="~/SANPHAMsAdmin/Capnhatsp">Sửa</a></li>
+                                <li><a href="~/SANPHAMsAdmin/Suasp">Sửa</a></li>
                                 <li><a href="~/SANPHAMsAdmin/Xoasp">Xóa</a></li>
                             </ul>
 
@@ -104,14 +104,15 @@
                                 <ul class="sub-dropdown">
                                     <li><a href="~/NHANVIENs/Create">Thêm</a></li>
 
-                                    <li><a href="~/NHANVIENs/Edit">Sửa </a></li>
+                                    <li><a href="~/NHANVIENs/Suasp">Sửa </a></li>
                                     <li><a href="#">Xóa</a></li>
                                 </ul>
 
                         </nav>
                     </div>
+                    
                 </ul>
-
+                
 
                 <ul>
                     <div class="menu-wrap">
@@ -131,64 +132,6 @@
             </div>
         </div>
         <div class="col-md-9 content">
-            <div class="home-strip">
-
-
-                <div class="member">
-                    <p><a href="#"><i class="men"></i></a><a href="#">Người dùng</a></p>
-                    <div id="dd" class="wrapper-dropdown-2" tabindex="1">
-                        <span><img src="~/Assets/Layouts/images/settings.png" /></span>
-                        <ul class="dropdown">
-
-                            <li><a href="#">Thông tin người dùng </a></li>
-                            <li><a href="#">Giúp đỡ</a></li>
-                            <li><a href="#">Báo cáo sự c</a></li>
-                            <li><a href="#">Đăng xuất</a></li>
-                        </ul>
-                    </div>
-                    <!-----end-wrapper-dropdown-2---->
-                    <!-----start-script---->
-                    <script type="text/javascript">
-                        function DropDown(el) {
-                            this.dd = el;
-                            this.initEvents();
-                        }
-                        DropDown.prototype = {
-                            initEvents: function () {
-                                var obj = this;
-
-                                obj.dd.on('click', function (event) {
-                                    $(this).toggleClass('active');
-                                    event.stopPropagation();
-                                });
-                            }
-                        }
-                        $(function () {
-
-                            var dd = new DropDown($('#dd'));
-
-                            $(document).click(function () {
-                                // all dropdowns
-                                $('.wrapper-dropdown-2').removeClass('active');
-                            });
-
-                        });
-                    </script>
-                    <div class="clearfix"></div>
-                </div>
-
-
-                <div class="new-users" style="margin-left :50px">
-                    <div class="icon">
-                        <i class="user1"></i>
-                    </div>
-                    <div class="icon-text">
-                        <h3>3</h3>
-                        <p>Khách hàng</p>
-                    </div>
-                    <div class="clearfix"></div>
-                </div>
-            </div>
 
             <div>
                 @RenderBody()

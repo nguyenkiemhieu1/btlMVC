@@ -4,7 +4,9 @@
     "\\Controllers",
     "\\Models",
     "\\Views",
-    "\\Views\\SANPHAMsAdmin"
+    "\\Views\\SANPHAMs",
+    "\\Views\\SANPHAMsAdmin",
+    "\\Views\\Shared"
   ],
   "SelectedNode": "\\btlMVC01.sln",
   "PreviewInSolutionExplorer": false

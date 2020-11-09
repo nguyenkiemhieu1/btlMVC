@@ -1,10 +1,10 @@
 ﻿@model IEnumerable<btlMVC01.Models.SANPHAM>
-
 @{
-    ViewBag.Title = "Index";
+    ViewBag.Title = "Suasp";
+    Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-
+<h2>Suasp</h2>
 <table class="table table-bordered table-striped" id="dataSanpham">
     <thead>
         <tr>
@@ -80,7 +80,6 @@
     </tbody>
 
 </table>
-
 @section scripts
 {
     <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
@@ -92,3 +91,4 @@
         });
     </script>
 }
+

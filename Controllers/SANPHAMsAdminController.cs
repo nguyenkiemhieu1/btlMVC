@@ -20,6 +20,16 @@ namespace btlMVC01.Controllers
             var sANPHAM = db.SANPHAM.Include(s => s.LOAISANPHAM);
             return View(sANPHAM.ToList());
         }
+        public ActionResult Suasp()
+        {
+            var sANPHAM = db.SANPHAM.Include(s => s.LOAISANPHAM);
+            return View(sANPHAM.ToList());
+        }
+        public ActionResult XoaSP()
+        {
+            var sANPHAM = db.SANPHAM.Include(s => s.LOAISANPHAM);
+            return View(sANPHAM.ToList());
+        }
 
         // GET: SANPHAMsAdmin/Details/5
         public ActionResult Details(string id)

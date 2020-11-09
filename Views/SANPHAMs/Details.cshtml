@@ -2,19 +2,22 @@
 
 @{
     ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_LayoutTrangchu.cshtml";
 }
 
-<h2>Details</h2>
+<h2 style="text-align:center">
+    CHI TIẾT SẢN PHẨM
+</h2>
 
 <div>
-    <h4>SANPHAM</h4>
+
     <hr />
-    <dl class="dl-horizontal">
+    <dl class="dl-horizontal" >
         <dt>
             @Html.DisplayNameFor(model => model.tensp)
         </dt>
 
-        <dd>
+        <dd >
             @Html.DisplayFor(model => model.tensp)
         </dd>
 
@@ -31,7 +34,7 @@
         </dt>
 
         <dd>
-            @Html.DisplayFor(model => model.hinhanh)
+            <img src="~/Assets/images/@Html.DisplayFor(model =>model.hinhanh)" style="height:200px;width:200px;" />
         </dd>
 
         <dt>
@@ -61,6 +64,5 @@
     </dl>
 </div>
 <p>
-    @Html.ActionLink("Edit", "Edit", new { id = Model.masp }) |
     @Html.ActionLink("Back to List", "Index")
 </p>

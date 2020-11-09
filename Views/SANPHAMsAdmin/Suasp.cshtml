@@ -1,13 +1,10 @@
 ﻿@model IEnumerable<btlMVC01.Models.SANPHAM>
-
 @{
     ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<p>
-    @Html.ActionLink("Thêm sản phẩm", "Create")
-</p>
-
+    <h2 style="text-align:center">CẬP NHẬT SẢN PHẨM</h2>
 <table class="table table-bordered table-striped" id="dataSanpham">
     <thead>
         <tr>
@@ -75,7 +72,7 @@
                     @Html.DisplayFor(modelItem => item.LOAISANPHAM.tenloaisp)
                 </td>
                 <td>
-                    @Html.ActionLink("Chi tiết ", "Details", new { id = item.masp })
+                    @Html.ActionLink("Cập nhật thông tin", "Edit", new { id = item.masp })
 
                 </td>
             </tr>
@@ -83,7 +80,6 @@
     </tbody>
 
 </table>
-
 @section scripts
 {
     <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
@@ -95,3 +91,4 @@
         });
     </script>
 }
+

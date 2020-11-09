@@ -15,6 +15,7 @@ namespace btlMVC01.Models
 
     public partial class NHANVIEN
     {
+        [DisplayName("ID người dùng")]
         public string manv { get; set; }
         [DisplayName("Tên người dùng")]
         public string tennv { get; set; }

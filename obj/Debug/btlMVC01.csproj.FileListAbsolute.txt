@@ -145,8 +145,8 @@ C:\Users\User\source\repos\btlMVC\bin\System.Web.Webpages.Razor.xml
 C:\Users\User\source\repos\btlMVC\bin\System.Web.Helpers.xml
 C:\Users\User\source\repos\btlMVC\bin\System.Web.Mvc.xml
 C:\Users\User\source\repos\btlMVC\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
-C:\Users\User\source\repos\btlMVC\obj\Debug\btlMVC01.csprojAssemblyReference.cache
 C:\Users\User\source\repos\btlMVC\obj\Debug\btlMVC01.csproj.CoreCompileInputs.cache
 C:\Users\User\source\repos\btlMVC\obj\Debug\btlMVC01.csproj.CopyComplete
 C:\Users\User\source\repos\btlMVC\obj\Debug\btlMVC01.dll
 C:\Users\User\source\repos\btlMVC\obj\Debug\btlMVC01.pdb
+C:\Users\User\source\repos\btlMVC\obj\Debug\btlMVC01.csprojAssemblyReference.cache

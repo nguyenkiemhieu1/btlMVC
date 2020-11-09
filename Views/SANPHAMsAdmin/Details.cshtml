@@ -4,10 +4,10 @@
     ViewBag.Title = "Details";
 }
 
-<h2>Details</h2>
+    <h2 style="text-align:center">CHI TIẾT SẢN PHẨM</h2>
 
 <div>
-    <h4>SANPHAM</h4>
+
     <hr />
     <dl class="dl-horizontal">
         <dt>
@@ -29,17 +29,17 @@
         <dt>
             @Html.DisplayNameFor(model => model.hinhanh)
         </dt>
-
         <dd>
-            @Html.DisplayFor(model => model.hinhanh)
-        </dd>
+            @*@Html.DisplayFor(model => model.hinhanh)*@
+            <img src="~/Assets/images/@Html.DisplayFor(model =>model.hinhanh)" style="height:200px;width:200px;" />
 
+        </dd>
         <dt>
             @Html.DisplayNameFor(model => model.gia)
         </dt>
 
         <dd>
-            @Html.DisplayFor(model => model.gia)
+            @String.Format("{0:#,###,###,##0.000}", Html.DisplayFor(model => model.gia))<a> VNĐ</a>
         </dd>
 
         <dt>

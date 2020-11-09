@@ -74,7 +74,7 @@
                                 <ul class="aa-head-top-nav-right">
 
                                     <li><a href="@Url.Action("Index", "Account")">Tài khoản của tôi</a></li>
-                                   
+
                                     <li class="hidden-xs">
                                         <a href="@(Session["username"] != null ? Url.Action("Index", "MyCart") : Url.Action("Login", "Account"))">
                                             Giỏ hàng @if (@ViewBag.NoOfItem > 0)
@@ -112,7 +112,7 @@
                                 <a href="@Url.Action("Index","SANPHAMs")">
                                     <span class="fa fa-shopping-cart"></span>
                                     <p>Apple<strong>SHOP</strong> <span>THỎA SỨC MUA SẮM</span></p>
-                                    
+
                                 </a>
                                 <!-- img based logo -->
                                 <!-- <a href="index.html"><img src="~/Content/img/logo.jpg" alt="logo img"></a> -->
@@ -137,15 +137,10 @@
                                 </div>
                             </div>
                             <!-- / cart box -->
-                            <!-- search box -->
-                            <div class="aa-search-box">
-                                <form action="@Url.Action("Search","Product")" method="get">
-                                    <input type="text" name="product" id="searchTxtBox" placeholder="Search product here . . . ">
-                                    <button type="submit"><span class="fa fa-search"></span></button>
-                                </form>
-                            </div>
-                            <!-- / search box -->
+
                         </div>
+                        <li><a href="@Url.Action("Index01", "SANPHAMs")">Phụ kiện điện thoại APPLE</a></li>
+                        <li><a href="@Url.Action("Index02", "SANPHAMs")">Máy tính bảng APPLE</a></li>
                     </div>
                 </div>
             </div>
@@ -157,7 +152,7 @@
     <section id="menu">
         <div class="container">
             <div class="menu-area">
-      
+
                 <div class="navbar navbar-default" role="navigation">
                     <div class="navbar-header">
                         <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
@@ -168,7 +163,7 @@
                         </button>
                     </div>
                     <div class="navbar-collapse collapse">
-                        
+
                         <ul class="nav navbar-nav">
                             <li><a href="@Url.Action("Index","Home")">Home</a></li>
                             @{
@@ -201,15 +196,17 @@
                             }
 
                         </ul>
-                    </div> 
+                    </div>
                 </div>
             </div>
         </div>
     </section>
     <!-- / menu -->
+   
     <div>
         @RenderBody()
     </div>
+
     <!-- footer -->
     <footer id="aa-footer">
         <!-- footer bottom -->
@@ -223,24 +220,24 @@
                                     <div class="aa-footer-widget">
                                         <h3>Main Menu</h3>
                                         <ul class="aa-footer-nav">
-                                            <li><a href="#">Home</a></li>
-                                            <li><a href="#">Our Services</a></li>
-                                            <li><a href="#">Our Products</a></li>
-                                            <li><a href="#">About Us</a></li>
-                                            <li><a href="#">Contact Us</a></li>
+                                            <li><a href="#">Trang chủ</a></li>
+                                            <li><a href="#">Dịch vụ của của hàng</a></li>
+                                            <li><a href="#">Sản phẩm của chúng tôi</a></li>
+                                            <li><a href="#">Giới thiệu</a></li>
+                                            <li><a href="#">Liên hệ với chúng tôi</a></li>
                                         </ul>
                                     </div>
                                 </div>
                                 <div class="col-md-3 col-sm-6">
                                     <div class="aa-footer-widget">
                                         <div class="aa-footer-widget">
-                                            <h3>Knowledge Base</h3>
+                                            <h3>GIới thiệu sản phẩm</h3>
                                             <ul class="aa-footer-nav">
-                                                <li><a href="#">Delivery</a></li>
-                                                <li><a href="#">Returns</a></li>
-                                                <li><a href="#">Services</a></li>
-                                                <li><a href="#">Discount</a></li>
-                                                <li><a href="#">Special Offer</a></li>
+                                                <li><a href="#">chuyển giao</a></li>
+                                                <li><a href="#">Lợi nhuận</a></li>
+                                                <li><a href="#">Dịch vụ</a></li>
+                                                <li><a href="#">Giảm giá</a></li>
+                                                <li><a href="#">Dịch vụ đặc biệt</a></li>
                                             </ul>
                                         </div>
                                     </div>
@@ -248,13 +245,13 @@
                                 <div class="col-md-3 col-sm-6">
                                     <div class="aa-footer-widget">
                                         <div class="aa-footer-widget">
-                                            <h3>Useful Links</h3>
+                                            <h3>Liên kết</h3>
                                             <ul class="aa-footer-nav">
-                                                <li><a href="#">Site Map</a></li>
-                                                <li><a href="#">Search</a></li>
-                                                <li><a href="#">Advanced Search</a></li>
-                                                <li><a href="#">Suppliers</a></li>
-                                                <li><a href="#">FAQ</a></li>
+                                                <li><a href="#">Địa trị map</a></li>
+                                                <li><a href="#">Tìm kiếm</a></li>
+                                                <li><a href="#">Tìm kiếm nâng cao</a></li>
+                                                <li><a href="#">Nhà cung cấp</a></li>
+                                                <li><a href="#">Câu hỏi thường gặp</a></li>
                                             </ul>
                                         </div>
                                     </div>
@@ -264,9 +261,9 @@
                                         <div class="aa-footer-widget">
                                             <h3>Contact Us</h3>
                                             <address>
-                                                <p>Suit#007, Sharae Faisal ,Karachi</p>
-                                                <p><span class="fa fa-phone"></span>021-6558-6588</p>
-                                                <p><span class="fa fa-envelope"></span>help@Khareedo.com.pk</p>
+                                                <p>An Vĩ Khoái Châu Hưng Yên</p>
+                                                <p><span class="fa fa-phone"></span>0963559069</p>
+                                                <p><span class="fa fa-envelope"></span>hieunguyen18021999@gmail.com</p>
                                             </address>
                                             <div class="aa-footer-social">
                                                 <a href="#"><span class="fa fa-facebook"></span></a>
@@ -289,7 +286,7 @@
                 <div class="row">
                     <div class="col-md-12">
                         <div class="aa-footer-bottom-area">
-                            <p>Designed by <a href="http://www.facebook.com/zulfiqar.akram366">Zulfiqar Akram</a></p>
+                            <p>ĐƯợc thiết kế bởi <a href="https://www.facebook.com/profile.php?id=100007704556379">Nguyễn Kiêm Hiếu</a></p>
                             <div class="aa-footer-payment">
                                 <span class="fa fa-cc-mastercard"></span>
                                 <span class="fa fa-cc-visa"></span>

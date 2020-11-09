@@ -1,7 +1,7 @@
 ﻿@model IEnumerable<btlMVC01.Models.LOAISANPHAM>
 
 @{
-    ViewBag.Title = "Index";
+    ViewBag.Title = "Trangchu";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
@@ -9,9 +9,6 @@
 <table class="table table-bordered table-striped" id="example">
 
     <thead>
-        <p>
-            @Html.ActionLink("Thêm Loại sản phẩm", "Create")
-        </p>
         <tr>
             <th>
                 @Html.DisplayNameFor(model => model.tenloaisp)
@@ -41,7 +38,7 @@
             </tr>
 
         }
-        >
+        
     </tbody>
 
 </table>
